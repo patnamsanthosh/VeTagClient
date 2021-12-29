@@ -1,0 +1,25 @@
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 padding-top-12">
+            <button mat-raised-button color="primary" class="padding-top-12" (click)="generate()">Generate QR Code</button>
+            <div *ngIf="generatedUrl" class="padding-top-12">
+                <div>
+                    <input type="url" style="width: 250px;" value="{{generatedUrl}}"/>
+                </div>
+                
+                <div>
+                    <a href="{{generatedUrl}}">{{generatedUrl}}</a>
+                </div>
+                
+            </div>
+        </div>
+        <div class="col-md-6 padding-top-12">
+            <div *ngIf="generatedUrl">
+                <qr-code value="{{generatedUrl}}" size="300" errorCorrectionLevel="M"></qr-code>
+            </div>
+        </div>
+    </div>
+    
+</div>
+
